@@ -1,1 +1,25 @@
+# name of the workflow
+name: CICD
+#when does wokflow run
+on: push
+##jobs
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        run: echo "Code checkout done"
 
+  build:
+    needs: code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Build
+        run: echo "Code build done"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code test
+        run: echo "Code test done"
