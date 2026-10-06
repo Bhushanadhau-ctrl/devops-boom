@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Code checkout
         uses: actions/checkout@v7
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
   build:
     needs: code
